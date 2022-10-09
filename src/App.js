@@ -1,3 +1,6 @@
+// Components
+import MoviesMain from "./components/MoviesMain/Movie/MoviesMain";
+
 function App() {
   return (
     <>
@@ -6,6 +9,9 @@ function App() {
           <a class="navbar-brand" href="/">Movies Task</a>
         </div>
       </nav>
+      <div className="container py-5">
+        <MoviesMain />
+      </div>
     </>
   );
 }

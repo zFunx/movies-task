@@ -28,7 +28,7 @@ const Navbar = () => {
                     <Route path='/' element={
                         <div className="d-flex justify-content-end">
                             <div className="dropdown">
-                                <button type="button" className="btn dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Release Year: {appContext.selectedYr} <span className="caret"></span></button>
+                                <button type="button" className="btn dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Release Year{appContext.selectedYr && ': ' + appContext.selectedYr} <span className="caret"></span></button>
                                 <ul className="dropdown-menu dropdown-menu-end scrollable-menu" aria-labelledby="dropdownMenuButton1">
                                     {yrs.map(yr => <li key={yr} className="dropdown-item" onClick={() => appContext.setSelectedYr(yr)}>{yr}</li>)}
                                 </ul>

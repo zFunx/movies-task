@@ -12,9 +12,7 @@ const MoviePage = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
 
-    useEffect(() => {
-        fetchMovie()
-    }, [])
+    useEffect(fetchMovie, []) //eslint-disable-line
 
     function fetchMovie() {
         axios.get(`https://movie-task.vercel.app/api/movie?movieId=${id}`)

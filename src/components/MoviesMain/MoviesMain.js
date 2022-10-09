@@ -42,14 +42,14 @@ const MoviesMain = () => {
             filteredMovies = filteredMovies.filter(movie => {
                 if (selectedYr) {
                     const yr = new Date(movie.release_date).getFullYear();
-                    return yr == selectedYr
+                    return yr === selectedYr
                 } else {
                     return true
                 }
             })
         }
 
-        if(filteredMovies.length == 0){
+        if(filteredMovies.length === 0){
             return <div className="my-5 fs-3 text-center text-white">No movies found</div>
         }
 

@@ -1,6 +1,12 @@
+import {useState} from 'react'
+
 // Components
 import MoviesMain from "./components/MoviesMain/Movie/MoviesMain";
 import MoviePage from "./components/MoviePage/MoviePage";
+import Navbar from "./components/Navbar/Navbar";
+
+// Context
+import AppContext from "./context/AppContext";
 
 import {
   BrowserRouter as Router,
@@ -8,14 +14,20 @@ import {
   Route,
 } from "react-router-dom";
 
+
+
 function App() {
+  const [selectedYr, setSelectedYr] = useState(null)
+
   return (
+    <AppContext.Provider
+      value={{
+        selectedYr,
+        setSelectedYr
+      }}
+    >
     <Router>
-      <nav class="navbar navbar-light bg-warning">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Movies Task</a>
-        </div>
-      </nav>
+      <Navbar />
       <div className="container py-5">
         <Routes>
           <Route exact path="/" element={<MoviesMain />} />
@@ -23,6 +35,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </AppContext.Provider>
   );
 }
 

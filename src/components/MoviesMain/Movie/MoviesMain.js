@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 // Components
 import Movie from './Movie'
+import ContentHOC from '../../HOC/ContentHOC/ContentHOC'
 
 // Helpers
 import axios from 'axios'
@@ -31,26 +32,8 @@ const MoviesMain = () => {
             })
     }
 
-    if (loading) {
-        return (
-            <div class="text-center py-5">
-                <div class="spinner-border text-warning" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        )
-    }
-    else if (error) {
-        return (
-            <div class="alert alert-danger d-flex align-items-center my-5" role="alert">
-                <div>
-                   {error}
-                </div>
-            </div>
-        )
-    }
-    else {
-        return (
+    return (
+        <ContentHOC loading={loading} error={error}>
             <div class="row">
 
                 {movies.map(movie => (
@@ -59,9 +42,8 @@ const MoviesMain = () => {
                     </div>
                 ))}
             </div>
-        )
-    }
-
+        </ContentHOC>
+    )
 }
 
 export default MoviesMain

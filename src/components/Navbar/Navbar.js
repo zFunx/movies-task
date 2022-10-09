@@ -1,11 +1,8 @@
-import React, { useState, useContext} from 'react'
+import { useContext} from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 
 // Context
 import AppContext from "../../context/AppContext";
-
-
-
 
 const Navbar = () => {
     const currentYr = new Date().getFullYear();
@@ -23,20 +20,20 @@ const Navbar = () => {
     }
 
     return (
-        <nav class="navbar navbar-light bg-warning">
-            <div class="container-fluid">
+        <nav className="navbar navbar-light bg-warning">
+            <div className="container-fluid">
                 <Link className="navbar-brand" to="/">Movies Task</Link>
 
                 <Routes>
                     <Route path='/' element={
                         <div className="d-flex justify-content-end">
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Release Year: {appContext.selectedYr} <span class="caret"></span></button>
-                                <ul class="dropdown-menu dropdown-menu-end scrollable-menu" aria-labelledby="dropdownMenuButton1">
-                                    {yrs.map(yr => <li key={yr} class="dropdown-item" onClick={() => appContext.setSelectedYr(yr)}>{yr}</li>)}
+                            <div className="dropdown">
+                                <button type="button" className="btn dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Release Year: {appContext.selectedYr} <span className="caret"></span></button>
+                                <ul className="dropdown-menu dropdown-menu-end scrollable-menu" aria-labelledby="dropdownMenuButton1">
+                                    {yrs.map(yr => <li key={yr} className="dropdown-item" onClick={() => appContext.setSelectedYr(yr)}>{yr}</li>)}
                                 </ul>
                             </div>
-                            {isFilterSet() && <button type="button" class="btn" onClick={clearFilters}>Clear filters <i class="fa-solid fa-xmark"></i></button>}
+                            {isFilterSet() && <button type="button" className="btn" onClick={clearFilters}>Clear filters <i className="fa-solid fa-xmark"></i></button>}
                         </div>
                     } />
                 </Routes>

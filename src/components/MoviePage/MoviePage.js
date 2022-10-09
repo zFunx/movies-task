@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 
 // Components
@@ -68,8 +68,8 @@ const MoviePage = () => {
                                         </div>
                                     }
                                     <div>
-                                        {data.vote_average && <span className="me-4"><i class="fa-solid fa-thumbs-up"></i> {data.vote_average.toFixed(2)}</span>}
-                                        {data.runtime && <><i class="fa-solid fa-play me-1"></i> {toHoursAndMinutes(data.runtime)}</>}
+                                        {data.vote_average && <span className="me-4"><i className="fa-solid fa-thumbs-up"></i> {data.vote_average.toFixed(2)}</span>}
+                                        {data.runtime && <><i className="fa-solid fa-play me-1"></i> {toHoursAndMinutes(data.runtime)}</>}
                                     </div>
                                 </div>
                             </div>

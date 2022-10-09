@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 // Components
-import MoviesMain from "./components/MoviesMain/Movie/MoviesMain";
+import MoviesMain from "./components/MoviesMain/MoviesMain";
 import MoviePage from "./components/MoviePage/MoviePage";
 import Navbar from "./components/Navbar/Navbar";
 

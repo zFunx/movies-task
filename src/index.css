@@ -23,3 +23,15 @@ code {
 .p-cursor{
   cursor: pointer;
 }
+
+.img-400h{
+  height: 400px;
+  width: auto;
+}
+
+@media only screen and (max-width: 576px) {
+  .img-400h{
+    height: auto;
+    width: 100%;
+  }
+}
